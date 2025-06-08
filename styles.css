@@ -7,8 +7,8 @@
     --accent-color: #1e1e1e;
     --hover-color: #3a3a3a;
     --section-bg: #f8f8f8;
-    --footer-bg: #111111;
-    --footer-text: #ffffff;
+    --footer-bg: #f8f8f8;
+    --footer-text: #888888;
 }
 
 body {
@@ -21,38 +21,29 @@ body {
 }
 
 header {
-    background: url('assets/hero-bg.jpg') no-repeat center center/cover;
-    color: var(--main-text);
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--main-bg);
+    padding: 60px 20px 20px;
     text-align: center;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 header h1 {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 700;
     margin: 0;
-    color: var(--main-text);
 }
 
 header p {
     font-size: 1.2em;
     color: var(--secondary-text);
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 section {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 40px 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
     background-color: var(--main-bg);
-}
-
-section:nth-of-type(even) {
-    background-color: var(--section-bg);
 }
 
 h2, h3 {
@@ -77,22 +68,69 @@ ul, ol {
     background-color: var(--accent-color);
     color: var(--main-bg);
     padding: 14px 28px;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 1em;
     font-weight: 600;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s;
 }
 
 .cta-buttons a:hover {
     background-color: var(--hover-color);
-    transform: translateY(-2px);
 }
 
 footer {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     background-color: var(--footer-bg);
     color: var(--footer-text);
     font-size: 0.9em;
-    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background-color: var(--accent-color);
+    width: 0;
+    transition: width 0.3s;
+}
+
+form .form-step {
+    display: none;
+}
+
+form .form-step.active {
+    display: block;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
 }
