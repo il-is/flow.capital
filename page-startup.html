@@ -7,25 +7,134 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <header>
-    <h1>Подать заявку стартапа</h1>
-  </header>
+<header>
+  <h1>Подать заявку стартапа</h1>
+</header>
 
-  <section>
-    <p>Форма состоит из 6 шагов. Здесь будет реализован пошаговый интерфейс (аналог анкеты), включая кнопки «Далее», «Назад», «Отправить» и прогресс-бар.</p>
-    <ul>
-      <li>Шаг 1: Основная информация</li>
-      <li>Шаг 2: Команда</li>
-      <li>Шаг 3: Технологии</li>
-      <li>Шаг 4: Продукт и рынок</li>
-      <li>Шаг 5: Финансы и рост</li>
-      <li>Шаг 6: Юридические аспекты и риски</li>
-    </ul>
-    <p>Форма готовится — будет реализована как адаптивная многошаговая анкета.</p>
-  </section>
+<section>
+  <div class="progress-bar">
+    <div class="progress-bar-inner" id="progress"></div>
+  </div>
 
-  <footer>
-    &copy; 2025 Flow Capital. Все права защищены.
-  </footer>
+  <form id="startupForm">
+    <!-- Step 1 -->
+    <div class="form-step active">
+      <h3>Шаг 1/6: Основная информация</h3>
+      <input type="text" placeholder="Название стартапа*" required />
+      <select required>
+        <option value="">Сфера деятельности*</option>
+        <option>Финтех</option>
+        <option>AI/ML</option>
+        <option>Ритейл</option>
+        <option>Технологии</option>
+        <option>Другое</option>
+      </select>
+      <input type="text" placeholder="Контактное лицо*" required />
+      <input type="email" placeholder="Email*" required />
+      <input type="date" placeholder="Дата подачи*" required />
+      <textarea placeholder="Краткое описание стартапа*" maxlength="200" required></textarea>
+      <button type="button" onclick="nextStep()">Далее</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="form-step">
+      <h3>Шаг 2/6: Команда</h3>
+      <textarea placeholder="Опыт команды в отрасли*" maxlength="300" required></textarea>
+      <textarea placeholder="Состав команды*" required></textarea>
+      <textarea placeholder="Совместный опыт команды" maxlength="200"></textarea>
+      <textarea placeholder="Видение и стратегия*" maxlength="300" required></textarea>
+      <textarea placeholder="Опыт общения с инвесторами" maxlength="200"></textarea>
+      <button type="button" onclick="prevStep()">Назад</button>
+      <button type="button" onclick="nextStep()">Далее</button>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="form-step">
+      <h3>Шаг 3/6: Технологии</h3>
+      <textarea placeholder="Новизна технологии*" maxlength="300" required></textarea>
+      <textarea placeholder="R&D-инфраструктура" maxlength="200"></textarea>
+      <textarea placeholder="Технологическая масштабируемость*" maxlength="200" required></textarea>
+      <button type="button" onclick="prevStep()">Назад</button>
+      <button type="button" onclick="nextStep()">Далее</button>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="form-step">
+      <h3>Шаг 4/6: Продукт и рынок</h3>
+      <textarea placeholder="Описание продукта и стадии*" maxlength="300" required></textarea>
+      <textarea placeholder="Уникальность продукта*" maxlength="200" required></textarea>
+      <textarea placeholder="Размер и динамика рынка*" maxlength="200" required></textarea>
+      <textarea placeholder="Конкурентные преимущества" maxlength="200"></textarea>
+      <label>Питч-дек (PDF, до 10 МБ)</label>
+      <input type="file" accept="application/pdf" />
+      <button type="button" onclick="prevStep()">Назад</button>
+      <button type="button" onclick="nextStep()">Далее</button>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="form-step">
+      <h3>Шаг 5/6: Финансы и рост</h3>
+      <textarea placeholder="Текущие результаты (traction)*" maxlength="200" required></textarea>
+      <input type="text" placeholder="Сумма инвестиций*" required />
+      <textarea placeholder="План использования инвестиций*" maxlength="200" required></textarea>
+      <textarea placeholder="Прогноз масштабирования" maxlength="200"></textarea>
+      <textarea placeholder="Текущие инвестиции*" maxlength="200" required></textarea>
+      <textarea placeholder="Структура капитала*" maxlength="200" required></textarea>
+      <button type="button" onclick="prevStep()">Назад</button>
+      <button type="button" onclick="nextStep()">Далее</button>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="form-step">
+      <h3>Шаг 6/6: Юридические аспекты и риски</h3>
+      <textarea placeholder="Регистрация компании*" maxlength="100" required></textarea>
+      <textarea placeholder="Договорная база" maxlength="200"></textarea>
+      <textarea placeholder="Отсутствие споров*" maxlength="100" required></textarea>
+      <textarea placeholder="Лицензии и соответствие" maxlength="200"></textarea>
+      <textarea placeholder="Чистота IP*" maxlength="200" required></textarea>
+      <textarea placeholder="Рыночные и операционные риски*" maxlength="200" required></textarea>
+      <label>Документы (PDF, до 10 МБ)</label>
+      <input type="file" accept="application/pdf" />
+      <button type="button" onclick="prevStep()">Назад</button>
+      <button type="submit">Отправить</button>
+    </div>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Flow Capital. Все права защищены.
+</footer>
+
+<script>
+let currentStep = 0;
+const steps = document.querySelectorAll(".form-step");
+const progress = document.getElementById("progress");
+
+function showStep() {
+  steps.forEach((step, index) => {
+    step.classList.toggle("active", index === currentStep);
+  });
+  progress.style.width = ((currentStep + 1) / steps.length) * 100 + "%";
+}
+
+function nextStep() {
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    showStep();
+  }
+}
+
+function prevStep() {
+  if (currentStep > 0) {
+    currentStep--;
+    showStep();
+  }
+}
+
+document.getElementById("startupForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  alert("Форма отправлена!");
+});
+</script>
 </body>
 </html>
