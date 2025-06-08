@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,207 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flow Capital</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --main-bg: #ffffff;
-      --main-text: #111111;
-      --secondary-text: #666666;
-      --accent-color: #1e1e1e;
-      --hover-color: #3a3a3a;
-      --section-bg: #f9f9f9;
-      --footer-bg: #f5f5f5;
-      --footer-text: #888888;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--main-bg);
-      color: var(--main-text);
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(to right, #f6f6f6, #ffffff);
-      padding: 100px 20px 60px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3.5em;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.25em;
-      color: var(--secondary-text);
-    }
-
-    section {
-      max-width: 960px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 10px;
-    }
-
-    h3 {
-      font-size: 1.2em;
-      margin-top: 30px;
-    }
-
-    ul {
-      padding-left: 20px;
-      line-height: 1.8;
-    }
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .process-step {
-      border: 1px solid #e0e0e0;
-      padding: 20px;
-      border-radius: 12px;
-      background-color: var(--section-bg);
-      transition: 0.3s ease;
-    }
-
-    .process-step:hover {
-      background-color: #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 40px 0;
-    }
-
-    .cta-buttons a {
-      background-color: var(--accent-color);
-      color: var(--main-bg);
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: 0.3s ease;
-    }
-
-    .cta-buttons a:hover {
-      background-color: var(--hover-color);
-    }
-
-    footer {
-      background-color: var(--footer-bg);
-      color: var(--footer-text);
-      text-align: center;
-      padding: 30px 10px;
-      font-size: 0.9em;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Flow Capital</h1>
-    <p>Привлечение умных инвестиций в ваш бизнес</p>
-  </header>
-
-  <section>
-    <h2>Кто мы</h2>
-    <p>Flow Capital — это инвестиционная компания нового формата, которая соединяет инвесторов с перспективными стартапами.</p>
-    <p>Мы создаём понятные, прозрачные сделки, где инвестор сам выбирает проекты для вложений — без сложных фондовых структур и без заморозки капитала на годы.</p>
-    <p>Наш фокус — привлечение <strong>умных инвестиций</strong> в компании, создавая <strong>синергию</strong> и стимулируя <strong>бурный рост</strong> бизнеса.</p>
-  </section>
-
-  <section>
-    <h2>Для кого</h2>
-    <h3>Для инвесторов:</h3>
-    <ul>
-      <li>Владельцы бизнеса (МСП, ПАО/АО), семейные офисы, профессиональные частные инвесторы (HNWI)</li>
-      <li>Топ-менеджеры и предприниматели, желающие диверсифицировать активы</li>
-      <li>Корпоративные игроки, ищущие стратегические точки роста через инвестиции</li>
-      <li>Экспаты и международные инвесторы, желающие участвовать в проверенных российских сделках</li>
-    </ul>
-    <h3>Для стартапов:</h3>
-    <ul>
-      <li>Компании с сильной командой и подтверждённым потенциалом роста</li>
-      <li>Стартапы в стадии <strong>growth</strong> или зрелые бизнесы, готовые к масштабированию</li>
-      <li>Проекты с амбициями выхода на новые рынки и отраслевыми инновациями</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Как это работает</h2>
-    <div class="process">
-      <div class="process-step">
-        <h3>1. Отбор проектов</h3>
-        <p>Мы отбираем перспективные проекты</p>
-      </div>
-      <div class="process-step">
-        <h3>2. Инвестпредложения</h3>
-        <p>Формируем инвестиционные предложения</p>
-      </div>
-      <div class="process-step">
-        <h3>3. Презентация сделок</h3>
-        <p>Предлагаем сделки проверенному кругу инвесторов</p>
-      </div>
-      <div class="process-step">
-        <h3>4. Структурирование</h3>
-        <p>Структурируем вход и сопровождение сделки</p>
-      </div>
-      <div class="process-step">
-        <h3>5. Экзит</h3>
-        <p>Помогаем организовать выход (экзит или частичный выкуп)</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Наши преимущества</h2>
-    <h3>Для инвесторов:</h3>
-    <ul>
-      <li>Полный контроль и выбор конкретных сделок</li>
-      <li>Порог входа от <strong>10 млн рублей</strong></li>
-      <li>Прозрачные условия участия</li>
-      <li>Гибкие форматы — от частичного входа до сопровождения сделки под ключ</li>
-      <li>Возможность частичного выхода / secondary</li>
-      <li>Синергия с основным бизнесом</li>
-    </ul>
-    <h3>Для стартапов:</h3>
-    <ul>
-      <li>Доступ к "умным деньгам" и стратегическим инвесторам</li>
-      <li>Структурированное привлечение капитала</li>
-      <li>Поддержка в юридическом оформлении и сопровождении сделки</li>
-      <li>Возможность частичного cash-out для команды</li>
-      <li>Рост вместе с качественными инвесторами, готовыми давать не только деньги</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Готовы начать?</h2>
-    <p style="text-align: center; font-size: 1.2em;">От начала сотрудничества нас отделяет форма обратной связи.</p>
-    <div class="cta-buttons">
-      <a href="page-investor.html">Заполнить анкету инвестора</a>
-      <a href="page-startup.html">Подать заявку стартапа</a>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Flow Capital. Все права защищены.
-  </footer>
+<header data-aos="fade-down">
+  <h1>Flow Capital</h1>
+  <p>Привлечение умных инвестиций в ваш бизнес</p>
+</header>
+<section data-aos="fade-up">
+  <h2>Кто мы</h2>
+  <p>Flow Capital — это инвестиционная компания нового формата, которая соединяет инвесторов с перспективными стартапами.</p>
+  <p>Мы создаём понятные, прозрачные сделки, где инвестор сам выбирает проекты для вложений — без сложных фондовых структур и без заморозки капитала на годы.</p>
+  <p>Наш фокус — привлечение <strong>умных инвестиций</strong> в компании, создавая <strong>синергию</strong> и стимулируя <strong>бурный рост</strong> бизнеса.</p>
+</section>
+<section data-aos="fade-up">
+  <h2>Для кого</h2>
+  <h3>Для инвесторов:</h3>
+  <ul>
+    <li>Владельцы бизнеса (МСП, ПАО/АО), семейные офисы, профессиональные частные инвесторы (HNWI)</li>
+    <li>Топ-менеджеры и предприниматели, желающие диверсифицировать активы</li>
+    <li>Корпоративные игроки, ищущие стратегические точки роста через инвестиции</li>
+    <li>Экспаты и международные инвесторы, желающие участвовать в проверенных российских сделках</li>
+  </ul>
+  <h3>Для стартапов:</h3>
+  <ul>
+    <li>Компании с сильной командой и подтверждённым потенциалом роста</li>
+    <li>Стартапы в стадии <strong>growth</strong> или зрелые бизнесы, готовые к масштабированию</li>
+    <li>Проекты с амбициями выхода на новые рынки и отраслевыми инновациями</li>
+  </ul>
+</section>
+<section data-aos="fade-up">
+  <h2>Готовы начать?</h2>
+  <p style="text-align: center; font-size: 1.2em;">От начала сотрудничества нас отделяет форма обратной связи.</p>
+  <div class="cta-buttons">
+    <a href="page-investor.html">Заполнить анкету инвестора</a>
+    <a href="page-startup.html">Подать заявку стартапа</a>
+  </div>
+</section>
+<footer>
+  &copy; 2025 Flow Capital. Все права защищены.
+</footer>
 </body>
 </html>
