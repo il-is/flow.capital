@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --main-bg: #ffffff;
+    --main-text: #111111;
+    --secondary-text: #666666;
+    --accent-color: #1e1e1e;
+    --hover-color: #3a3a3a;
+    --section-bg: #f8f8f8;
+    --footer-bg: #111111;
+    --footer-text: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg);
+    color: var(--main-text);
+    line-height: 1.6;
+}
+
+header {
+    background: url('assets/hero-bg.jpg') no-repeat center center/cover;
+    color: var(--main-text);
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--main-text);
+}
+
+header p {
+    font-size: 1.2em;
+    color: var(--secondary-text);
+    margin-top: 20px;
+}
+
+section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background-color: var(--main-bg);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--section-bg);
+}
+
+h2, h3 {
+    color: var(--main-text);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    background-color: var(--accent-color);
+    color: var(--main-bg);
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-buttons a:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    font-size: 0.9em;
+    margin-top: 40px;
+}
